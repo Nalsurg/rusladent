@@ -12,6 +12,10 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.5/dist/fullcalendar.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@1.10.4/dist/scheduler.min.js"></script>
+
+    <!-- Добавление языкового пакета demo https://fullcalendar.io/docs/v3/locale-demo -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.5/dist/locale-all.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.5/dist/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@1.10.4/dist/scheduler.min.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css">
@@ -85,7 +89,10 @@
     var events = []
 
     $(document).ready(function() {
+
         var today = new Date();
+        var initialLocaleCode = 'ru';
+
         var $calendar = $('#calendar')
         $calendar.fullCalendar({
             defaultView: 'month',
@@ -99,6 +106,7 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay,agendaFourDay,listWeek'
             },
+            locale: initialLocaleCode,
             timeZone: 'local',
             initialDate: today,
             navLinks: true,
